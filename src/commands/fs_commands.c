@@ -40,8 +40,45 @@ void cmd_rmdir(int argc, char **argv)
         perror("rmdir failed");
     }
 }
-void cmd_rm(int argc, char **argv);
-void cmd_touch(int argc, char **argv);
+
+
+void cmd_rm(int argc, char **argv)
+{
+    if(argc < 2)
+    {
+        printf("Usage: rm <filename>");
+        return;
+    }
+
+    if(unlink_wrapper(argv[1]) == 0)
+    {
+        printf("File %s removed\n", argv[1]);
+    }
+    else
+    {
+        perror("rm failed");
+    }
+}
+
+void cmd_touch(int argc, char **argv)
+{
+    if(argc < 2)
+    {
+        printf("Usage: touch <filename>\n");
+        return;
+    }
+
+    FILE *fp = fopen(argv[1], 'a');
+    if(fp)
+    {
+        fclose(fp);
+        printf("file %s created", argv[1]);
+    }
+    else
+    {
+        perror("touch failed");
+    }
+}
 void cmd_ls(int argc, char **argv);
 void cmd_cd(int argc, char **argv);
 void cmd_pwd(int argc, char **argv);
