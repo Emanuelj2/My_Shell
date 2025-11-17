@@ -10,12 +10,12 @@
     #include <io.h>
     #define PATH_SEPARATOR "\\"
     #define MAX_PATH_LEN MAX_PATH
-    #define getcwd_wrapper _getcwd
+    #define getcwd_wrapper _getcwd              //get the path (pwd)
     #define chdir_wrapper _chdir
-    #define mkdir_wrapper(path) _mkdir(path)
-    #define rmdir_wrapper _rmdir
-    #define unlink_wrapper _unlink
-    #define access_wrapper _access
+    #define mkdir_wrapper(path) _mkdir(path)    //make a directory
+    #define rmdir_wrapper _rmdir                //remova a directory
+    #define unlink_wrapper _unlink              //remova a file
+    #define access_wrapper _access              //
     #define F_OK 0
 #else
     #define PLATFORM_UNIX
