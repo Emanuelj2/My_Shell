@@ -3,18 +3,13 @@
 
 #define MAX_ARGS 64
 
+typedef struct {
+    char *args[MAX_ARGS + 1];  // +1 for NULL terminator
+    int argc;
+} ParsedCommand;
 
-
-//make a struct for the struct
-typedef struct
-{
-    char args[MAX_ARGS];    //this contians the max chars or char args
-    int argc;               //this contins the number of arg numbers
-
-}ParsedCommand;
-
-//parse input into command and argument
+// Parse input into command and arguments
 ParsedCommand parse_command(char *input);
 void free_parsed_command(ParsedCommand *cmd);
 
-#endif
+#endif // PARSER_H

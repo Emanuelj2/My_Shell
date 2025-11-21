@@ -1,8 +1,8 @@
 #ifndef FS_COMMANDS_H
 #define FS_COMMANDS_H
 
-//file system commands
-void cmd_mkdir(int argc, char**argv);
+// File system commands
+void cmd_mkdir(int argc, char **argv);
 void cmd_rmdir(int argc, char **argv);
 void cmd_rm(int argc, char **argv);
 void cmd_touch(int argc, char **argv);
@@ -13,7 +13,7 @@ void cmd_cp(int argc, char **argv);
 void cmd_mv(int argc, char **argv);
 void cmd_tree(int argc, char **argv);
 
-#endif
+#endif // FS_COMMANDS_H
 
 //char ** is a list/array of strings
 /*
