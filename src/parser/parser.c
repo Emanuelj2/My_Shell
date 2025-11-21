@@ -6,6 +6,7 @@
 
 
 //parse input into command and argument
+//tokenizes command
 ParsedCommand parse_command(char *input)
 {
     ParsedCommand cmd;
