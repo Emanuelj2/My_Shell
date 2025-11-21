@@ -1,6 +1,7 @@
 #include "net_commands.h"
+#include "../utils/platform.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 
 void cmd_ping(int argc, char **argv) {
     if (argc < 2) {
@@ -20,6 +21,9 @@ void cmd_ping(int argc, char **argv) {
 }
 
 void cmd_ifconfig(int argc, char **argv) {
+    (void)argc;  // Unused parameter
+    (void)argv;  // Unused parameter
+    
 #ifdef PLATFORM_WINDOWS
     printf("Network Configuration (ipconfig):\n");
     system("ipconfig");

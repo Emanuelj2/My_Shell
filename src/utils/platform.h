@@ -1,8 +1,7 @@
-#ifndef PALTFORM_H
+#ifndef PLATFORM_H
 #define PLATFORM_H
 
-
-//platform detection for windows or unix
+// Platform detection
 #ifdef _WIN32
     #define PLATFORM_WINDOWS
     #include <windows.h>
@@ -10,12 +9,12 @@
     #include <io.h>
     #define PATH_SEPARATOR "\\"
     #define MAX_PATH_LEN MAX_PATH
-    #define getcwd_wrapper _getcwd              //get the path (pwd)
+    #define getcwd_wrapper _getcwd
     #define chdir_wrapper _chdir
-    #define mkdir_wrapper(path) _mkdir(path)    //make a directory
-    #define rmdir_wrapper _rmdir                //remova a directory
-    #define unlink_wrapper _unlink              //remova a file
-    #define access_wrapper _access              //
+    #define mkdir_wrapper(path) _mkdir(path)
+    #define rmdir_wrapper _rmdir
+    #define unlink_wrapper _unlink
+    #define access_wrapper _access
     #define F_OK 0
 #else
     #define PLATFORM_UNIX
@@ -37,11 +36,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-//platform specific functions
+// Platform-specific functions
 void clear_screen(void);
 void sleep_ms(int milliseconds);
-int file_exist(const char *path);
+int file_exists(const char *path);
 int is_directory(const char *path);
 char* get_home_directory(void);
 
-#endif
+#endif // PLATFORM_H
